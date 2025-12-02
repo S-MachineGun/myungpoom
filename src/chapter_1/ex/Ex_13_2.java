@@ -12,5 +12,8 @@ public class Ex_13_2 {
         System.out.print("학년 입력하거라:");
         int year = sc.nextInt();
 
+        String result = ((year == 4 && score < 69) || score < 60) ? "불합격" : "합격";
+
+        System.out.println(result);
     }
 }
