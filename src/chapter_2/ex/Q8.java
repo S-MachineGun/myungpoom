@@ -10,14 +10,14 @@ public class Q8 {
 
         System.out.print("정수 몇개?");
         int n = scanner.nextInt();
-        int [] val = new int[n+1];
+        int [] val = new int[n];
 
-        for(int i=0; i<val.length-1; i++){
-            if(val[i]==val[i+1]){
-                val[i] = ran.nextInt(r);
-            }
-            System.out.print(val[i] + " ");
+        for(int i=0;i<val.length;i++){
+            val[i] = ran.nextInt(r);
         }
 
+        while(true){
+
+        }
     }
 }

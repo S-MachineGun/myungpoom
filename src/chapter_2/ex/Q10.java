@@ -8,22 +8,29 @@ public class Q10 {
         int count = 0;
         int r = (int)(Math.random()*10+1);
         int [][]val =  new int[4][4];
+        int zeros = 6;
+        int spaces = 16;
 
         for(int i=0; i<val.length; i++){
             for(int j=0; j<val[i].length; j++){
-                val[i][j] = rand.nextInt(r);
-                if(val[i][j] == 0) {
-                    count++;
-                    if(count>6) {
-                        val[i][j] = rand.nextInt(r);
-                    } else {
-                        System.out.print(val[i][j] + " ");
-                    }
+                if(zeros == spaces) {
+                    val[i][j] = 0;
+                    zeros --;
+                } else if(zeros > 0 &&  rand.nextBoolean()){
+                    val[i][j] = 0;
+                    zeros --;
                 } else {
-                    System.out.print(val[i][j] + " ");
+                    int num;
+                    do {
+                        num = rand.nextInt(r);
+                    } while(num == 0);
+                    val[i][j] = num;
                 }
+                spaces--;
+                System.out.print(val[i][j] + " ");
             }
             System.out.println();
         }
+
     }
 }
